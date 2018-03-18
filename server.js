@@ -36,11 +36,9 @@ app.use((req, res, next) => {
   next();
 });
 
-debugger;
-
-app.use((req, res, next) => {
-  res.render('maintanance.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintanance.hbs');
+// });
 
 app.get('/', (req, res) => {
   //res.send('<h1>Hello Express!</h1>');
@@ -55,6 +53,14 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     message: 'Page about Ece :):):)',
+    currentYear: (new Date()).getFullYear()
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    message: 'Projects of Ece :):):)',
     currentYear: (new Date()).getFullYear()
   });
 });
